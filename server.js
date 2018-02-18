@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone= {
+var articles= {
+'article-one': {
   title: "Article-one|muhammed sahad bin abdul samed", 
   heading: "Article-one",
   date: "september 5th,2018",
@@ -21,8 +22,22 @@ var articleone= {
                 This is the content for my first article.This is the content for my first article.This is the content for my first article.
                 This is the content for my first article.This is the content for my first article.This is the content for my first article.
             </p>`
+},
+'article-two': {title: "Article-two|muhammed sahad bin abdul samed", 
+  heading: "Article-two",
+  date: "september 10th,2018",
+  content: `<p>
+                This is the content for my first article.This is the content for my first article.This is the content for my first article.
+                This is the content for my first article.This is the content for my first article.This is the content for my first article.
+            </p>`},
+'article-three': {title: "Article-three|muhammed sahad bin abdul samed", 
+  heading: "Article-three",
+  date: "september 15th,2018",
+  content: `<p>
+                This is the content for my first article.This is the content for my first article.This is the content for my first article.
+                This is the content for my first article.This is the content for my first article.This is the content for my first article.
+            </p>`}
 };
-
 function createtemplate (data){
     var title=data.title;
     var heading=data.heading;
@@ -70,16 +85,9 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one',function (req, res) {
-    res.send(createtemplate(articleone));
-});
-
-app.get('/article-two',function (req, res) {
-    res.sendfile(path.join(__dirname,'ui', 'article-two.html'));
-});
-
-app.get('/article-three',function (req, res) {
-    res.sendfile(path.join(__dirname,'ui', 'article-three.html'));
+app.get('/:articlename',function (req, res) {
+    var articlename = req.params.articlename;
+    res.send(createtemplate(articles[articlename]));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
