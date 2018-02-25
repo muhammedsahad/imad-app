@@ -7,5 +7,5 @@ element.innerHTML='THIS IS MY FIRST WEB APPLICATION AND MY NAME IS MUHAMMED SAHA
 
 var img = document.getElementById('madi');
 img.onclick = function () {
-     img.style.marginRight = '200px';
+     var interval = setinterval(moveRight, 50)
 };
