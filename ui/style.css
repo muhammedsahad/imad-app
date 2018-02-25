@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
-    margin-top: 75px;
+    margin-top: 5px;
 }
 
 .center {
@@ -9,7 +9,7 @@ body {
 }
 
 .text-big {
-    font-size: 300%;
+    font-size: 200%;
 }
 
 .bold {
@@ -22,7 +22,7 @@ body {
 .container {
             max-width: 820px;
             margin: 0 auto;
-            color: #b31d1d;
+            color: black;
             font-family: sans-serif;
             padding-top: 60px;
             padding-left: 20px;
