@@ -7,10 +7,10 @@ element.innerHTML='THIS IS MY FIRST WEB APPLICATION AND MY NAME IS MUHAMMED SAHA
 
 var img = document.getElementById('madi');
 var marginLeft = 0;
-function moveRight(){
+function moveRight () {
      marginLeft = marginLeft + 10;
      img.style.marginLeft = marginLeft + 'px';
 }
 img.onclick = function() {
-    var interval = setinterval(moveRight, 100);
+    var interval = setInterval(moveRight, 100);
 };
